@@ -1,0 +1,96 @@
+http://hocphp.info/form-validatiton-trong-codeigniter/
+https://freetuts.net/hoc-codeigniter/xay-dung-website-ban-hang-codeigniter#ExuH4z-fBVc
+http://demo.interface.club/crown/index.html
+https://www.youtube.com/watch?v=hzMoTzyMhUU
+create database
+admin:thong-dang-nhap
+user:thong-tin-khach-hang
+catalgo:luu-lai-cac-muc-san-pham--danh muc san pham nhu banh,keo,quan,ao,....
+	quan: quan sort,quan dai,
+	ao: ao kieu, ao bong
+	-parent-id: luu lai id cua parent
+	-sort_order: vi tri hien thi
+product: created-- thoi gian tao ra san pham
+transaction: thong tin giao dich
+		-created-thoi gian giao dich
+
+INSERT INTO user (id, name, email, password, phone, created)
+INSERT INTO user VALUES (2, 'nga', 'nga@gmail.com', 123456, 123456,'14-28-2018')
+----------------
+common_helper.php tu viet ra nhung trang trong admin
+----------------------------------------------------------
+http://localhost/codeigniter/admin/admin/update
+-------------------
+function create(){
+			$this->load->model('admin_model');
+			$data = array();
+			$data['username'] = 'admin';
+			$data['password'] = '123456';
+			$data['name'] = 'ngocvon';
+			if($this->admin_model->create($data)){
+				echo'Them thanh cong';
+			}else{
+				echo 'khong them thanh cong';
+			}
+		}
+
+		function update(){
+			$id = '8';
+			$data= array();
+			$data['username'] ='be';
+			$data['password']='234567';
+			$data['name'] ='hang';
+			if($this->admin_model->update($id,$data)){
+				echo 'cap nhat thanh cong ';
+			}
+			else{
+				echo 'cap nhat ko thanh cong ';
+			}
+		}
+
+		function delete(){
+			$id='8';
+			if($this->admin_model->delete($id)){
+				echo 'xoa thanh cong';
+			}else{
+				echo'khog xoa thanh cong';
+			}
+		}
+
+		function get_info(){
+			$id=1;
+			$info = $this->admin_model->get_info($id,'username,password');
+			echo '<pre>';
+			print_r($info);
+		}
+
+		function get_list(){
+			$input= array();
+			// dieu kien de show ra get list
+			$input['order'] = array('username','desc');
+			//$input['where']=array('id' =>1 );
+			$input['like']=array('username','admin');
+			//$input ['limit'] = array(1,0);
+			$list= $this->admin_model->get_list($input);
+			echo '<pre>';
+			print_r($list);
+		}
+http://prntscr.com/jbyzm5h
+-------------------------------------
+hien thi danh sach trong admin
+http://prntscr.com/jbzlyq
+--------------------------------------
+name dat giong voi cot du lieu can them
+---------------------
+chinh lai tieng viet cho validation form
+http://prntscr.com/jc7zvx
+-------------------------
+luu lai gia tri khi submit de phai nhap lai khi submit ko ve duoc csdl
+<?php echo set_value('name') ?>
+-----------
+phuong thuc lay ra gia tri cua bien nao
+$message = $this->session->flashdata();
+----------------------------------
+goi phuong thuc  trong file constroller thong qua duong dan tren site
+----------
+https://gist.github.com/Haosvit/bc64d8b83ea684b510063f45bd99111b
