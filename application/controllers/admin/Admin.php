@@ -66,9 +66,9 @@
 					);
 					if($this->admin_model->create($data)){
 						// tao ra noi dung thong bao
-						$this->session->set_flashdata('message','them moi du lieu thanh cong');
+						$this->session->set_flashdata('message','Thêm mới dữ liệu thành công');
 					}else{
-						$this->session->set_flashdata('message','ko them duoc');
+						$this->session->set_flashdata('message','Không thêm được');
 					}
 					// chuyen toi trang danh sach quan tri vien
 					redirect(admin_url('admin'));
@@ -88,7 +88,7 @@
 			$this->load->library('form_validation');
 			$this->load->helper('form');
 			if(!$info){
-				$this->session->set_flashdata('message','ko ton tai quan tri vien nay');
+				$this->session->set_flashdata('message','Không tồn tại quản trị viên này');
 				redirect(admin_url('admin'));
 			}
 			$this->data['info']= $info;
@@ -116,9 +116,9 @@
 					}
 					if($this->admin_model->update($id, $data)){
 						// tao ra noi dung thong bao
-						$this->session->set_flashdata('message','cap nhat du lieu thanh cong');
+						$this->session->set_flashdata('message','Cập nhật dữ liệu thành công');
 					}else{
-						$this->session->set_flashdata('message','ko cap nhat duoc');
+						$this->session->set_flashdata('message','Không cập nhật được');
 					}
 					// chuyen toi trang danh sach quan tri vien
 					redirect(admin_url('admin'));
@@ -139,13 +139,23 @@
 			// lay thong tin cua quan tri vien
 			$info =$this->admin_model->get_info($id);
 			if(!$info){
-				$this->session->set_flashdata('message','ko ton tai quan tri vien nay');
+				$this->session->set_flashdata('message','Không tồn tại quản trị viên này');
 				redirect(admin_url('admin'));
 			}
 			// thuc hien xoa
 			$this->admin_model->delete($id);
-			$this->session->set_flashdata('message','xoa du lieu thanh cong');
+			$this->session->set_flashdata('message','Xóa dữ liệu thành công');
 			redirect(admin_url('admin'));
+		}
+
+		/*
+		* thuc hien dang xuat
+		*/
+		function logout(){
+			if($this->session->userdata('login')){
+				$this->session->unset_userdata('login');
+			}
+			redirect(admin_url('login'));
 		}
 	}
 

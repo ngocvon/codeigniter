@@ -4,12 +4,12 @@
 	
 	<div class="widget">
 		<div class="title">
-			<h6>Them moi quan tri vien</h6>
+			<h6>Thêm quản trị viên mới</h6>
 		</div>
 		<form class="form" id="form" action="" method="post" enctype="multipart/form-data">
 			<fieldset>
 				<div class="formRow">
-					<label class="formLeft" for="param_name">Ten:<span class="req">*</span></label>
+					<label class="formLeft" for="param_name">Họ và tên<span class="req">*</span></label>
 					<div class="formRight">
 						<span class="oneTwo">
 							<input name="name" id="param_name" _autocheck="true" type="text" value="<?php echo set_value('name') ?>">

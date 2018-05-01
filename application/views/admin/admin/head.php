@@ -1,10 +1,9 @@
 <div class="titleArea">
 	<div class="wrapper">
 		<div class="pageTitle">
-			<h5>quan tri viên</h5>
+			<h5>Quản trị viên</h5>
 			<span>Quản lý admin</span>
 		</div>
-		
 		<div class="horControlB menu_action">
 			<ul>
 				<li><a href="<?php echo admin_url('admin/add') ?>">
@@ -17,7 +16,6 @@
 				</a></li>
 			</ul>
 		</div>
-		
 		<div class="clear"></div>
 	</div>
 </div>

@@ -14,21 +14,20 @@
 				<tr>
 					<td style="width:10px;"><img src="<?php echo public_url('admin') ?>/images/icons/tableArrows.png"></td>
 					<td style="width:80px;">Mã số</td>
-					<td>Ho va ten</td>
-					<td>username</td>
-					<td>hanh dong</td>
+					<td>Họ và tên</td>
+					<td>Username</td>
+					<td>Hàng động</td>
 				</tr>
 			</thead>
  			<tfoot>
-
 				<tr>
 					<td colspan="7">
-					     <div class="list_action itemActions">
-								<a href="#submit" id="submit" class="button blueB" url="user/del_all.html">
-									<span style="color:white;">Xóa hết</span>
-								</a>
-						 </div>
-					     <div class="pagination"></div>
+					    <div class="list_action itemActions">
+							<a href="#submit" id="submit" class="button blueB" url="user/del_all.html">
+								<span style="color:white;">Xóa hết</span>
+							</a>
+						</div>
+					    <div class="pagination"></div>
 					</td>
 				</tr>
 			</tfoot>
@@ -57,7 +56,6 @@
 				<?php endforeach; ?>
 			</tbody>
 		</table>
-		
 	</div>
 </div>
 <div class="clear mt30"></div>
