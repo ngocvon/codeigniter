@@ -69,3 +69,28 @@ function some(){
 	});
 	console.log(truth);
 }
+//_.size tra ve chieu dai cua mang
+//_.first tra ve mang con 
+function first(){
+	var numbers=[1,2,3,4,5];
+	var first=_.first(numbers,3);
+	console.log(first);
+}
+//_.initiall
+tra ve mang con
+//_.last tra ve mang con tu phia cuoi mang
+//_.compact tra ve mang co gia tri
+function compact(){
+	var things = [1,0,2,'',false,"tom"];
+	console.log(_.compact(things));
+}
+==> [1,2,"tom"]
+//_.flatten() tra ve mang
+function flatten(){
+	var numbers =[1,2,[3],[[4]]];
+	console.log(_.flatten(numbers));
+}
+// _.without
+//_.union merrge mang lai
+//_.intersection gop 2 mang lai lay nhung mang ko trung
+//_.difference gop 2 mang lai
