@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="JavaScript image cropper.">
+  <meta name="author" content="Chen Fengyuan">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/cropper.css">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+  body { margin: 2em; text-align: center; }
+  form { margin-bottom: 2em; }
+  table { text-align: left; margin: 0 auto; }
+  th, td { padding: .2em; }
+</style>
+</head>
+<body>
+	<div id="container">
+		<h1>User Search</h1>
+		<form>
+			<input id="search" type="search" name="search" placeholder="Search for a user" data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off" />
+		</form>
+
+		<table data-bind="visible: users().length > 0">
+			<thead><tr><th>Id</th><th>Name</th></tr></thead>
+			<tbody data-bind="foreach: users">
+				<tr>
+					<td data-bind="text: id"></td>
+					<td data-bind="text: name"></td>
+				</tr>    
+			</tbody>
+		</table>
+	</div>
+  	<script type='text/javascript' src='js/jquery.js'></script>
+  	<script type='text/javascript' src='js/knockout-2.2.0.js'></script>
+	<script type='text/javascript' src='js/knockout.mapping-latest.js'></script>
+  	<script type='text/javascript' src="js/filter-data-table.js"></script>
+</body>
+</html>

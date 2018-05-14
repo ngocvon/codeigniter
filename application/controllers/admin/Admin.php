@@ -24,8 +24,17 @@
 			$this->data['temp'] = 'admin/admin/index';
 			$this->load->view('admin/main', $this->data);
 		}
-		
+		/*
+		//show cac element 
+		*/
+		function dsadmin(){
 
+			$input = array();
+			$input['like'] = array('username' => 'h');
+			$list = $this->admin_model->get_list($input);
+		
+			pre($list);
+		}
 		/*
 		//kiem tra username da ton tai hay chua
 		*/

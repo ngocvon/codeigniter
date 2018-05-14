@@ -228,7 +228,8 @@ class MY_Model extends CI_Model {
 		// $input['like'] = array('name' => 'abc');
 	    if ((isset($input['like'])) && $input['like'])
 		{
-			$this->db->like($input['like'][0], $input['like'][1]); 
+			//$this->db->like($input['like'][0], $input['like'][1]); 
+			$this->db->like($input['like']); 
 		}
 		
 		// Thêm sắp xếp dữ liệu thông qua biến $input['order'] 
