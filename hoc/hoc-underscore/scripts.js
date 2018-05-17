@@ -2,7 +2,7 @@ $(document).ready(function() {
 	var number =[1,2,3];
 	var sum = _.reduce(number,function(total,item,index,number){
 		if(index == 1){
-			console.log(number[0]);
+			//console.log(number[0]);
 		}
 		return total + item;
 	});	
@@ -14,6 +14,8 @@ $(document).ready(function() {
 //
 
 $(document).ready(function() {
+	// tra ve element
+	// find return number ;
 	var numbers =[1,2,3];
 	var found = _.find(numbers,function(num){
 		return num % 3==0;
@@ -22,9 +24,9 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-	findWhere();
-	reject();
-	every();
+	//findWhere();
+	//reject();
+	//every();
 	find();
 });
 
@@ -53,10 +55,11 @@ function every(){
 	console.log(truth);
 }
 function find(){
-	// find return number ;
 	// filter return array
 	var numbers = [1,2,3,4,5,6];
 	var found = _.filter(numbers,function(number){
+		console.log('number',number % 3);
+		// chia het 
 		return number % 3 ===0;
 	});
 	console.log(found);
@@ -77,14 +80,14 @@ function first(){
 	console.log(first);
 }
 //_.initiall
-tra ve mang con
+//tra ve mang con
 //_.last tra ve mang con tu phia cuoi mang
 //_.compact tra ve mang co gia tri
 function compact(){
 	var things = [1,0,2,'',false,"tom"];
 	console.log(_.compact(things));
 }
-==> [1,2,"tom"]
+//==> [1,2,"tom"]
 //_.flatten() tra ve mang
 function flatten(){
 	var numbers =[1,2,[3],[[4]]];

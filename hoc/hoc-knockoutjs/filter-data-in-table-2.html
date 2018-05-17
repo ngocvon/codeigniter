@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="JavaScript image cropper.">
+  <meta name="author" content="Chen Fengyuan">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/cropper.css">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+	  body { margin: 2em; text-align: center; }
+	  form { margin-bottom: 2em; }
+	  table { text-align: left; margin: 0 auto; }
+	  th, td { padding: .2em; }
+</style>
+</head>
+<body>
+	<b>Filters:</b><br />
+	<div data-bind="foreach: filter.filters">
+		<div>
+			<span data-bind="text: Name"></span>:<br />
+		</div>
+		<div data-bind="if: Type == 'select'">
+			<select data-bind="options: Options, optionsText: 'Name', value: CurrentOption"></select>
+		</div>
+		<div data-bind="if: Type == 'text'">
+			<input type="text" data-bind="value: Value, valueUpdate: 'afterkeydown'" />
+		</div>
+	</div>
+	<br />
+	<b>Sorts:</b>
+	Field:<br />
+	<select data-bind="options: sorter.sortOptions, optionsText: 'Name', value: sorter.currentSortOption"></select>
+	Direction:
+	<select data-bind="options: sorter.sortDirections, optionsText: 'Name', value: sorter.currentSortDirection"></select>
+	<br />
+	<br />
+	<div class="Pager"></div>
+	<div class="NoRecords"></div>
+	<table>
+		<thead>
+			<tr>
+				<th>
+					ID
+				</th>
+				<th>
+					Name
+				</th>
+				<th>
+					Status
+				</th>
+			</tr>
+		</thead>
+		<tbody data-bind="foreach: pager.currentPageRecords">
+			<tr>
+				<td>
+					<span data-bind="text: id"></span>
+				</td>
+				<td>
+					<span data-bind="text: name"></span>
+				</td>
+				<td>
+					<span data-bind="text: status"></span>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+  	<script type='text/javascript' src='js/jquery.js'></script>
+  	<script type='text/javascript' src='js/knockout-2.2.0.js'></script>
+	<script type='text/javascript' src='js/knockout.mapping-latest.js'></script>
+  	<script type='text/javascript' src="js/filter-data-table-2.js"></script>
+</body>
+</html>
