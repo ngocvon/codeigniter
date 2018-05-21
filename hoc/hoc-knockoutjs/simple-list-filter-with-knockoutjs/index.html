@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Simple list filter with KnockoutJS</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <div class="container">
+	<div class="filter">
+		<label><input type="radio" name="category" checked value="All" data-bind="checked: selectedCategory" /> All</label>
+		<label><input type="radio" name="category" value="Tech" data-bind="checked: selectedCategory" /> Tech</label>
+		<label><input type="radio" name="category" value="Entertainment" data-bind="checked: selectedCategory" /> Entertainment</label>
+		<label><input type="radio" name="category" value="Fictional" data-bind="checked: selectedCategory" /> Fictional</label>
+	</div>
+	<select>
+		<option data-bind="selected: selectedCategory">
+			All
+		</option>
+		<option data-bind="selected: selectedCategory">
+			Tech
+		</option>
+		<option data-bind="selected: selectedCategory">
+			Entertainment
+		</option>
+		<option data-bind="selected: selectedCategory">
+			Fictional
+		</option>
+	</select>
+	<ul class="people-list" data-bind="foreach: filteredPeople">
+		<li data-bind="text: name"></li>
+	</ul>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

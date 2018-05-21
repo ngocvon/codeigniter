@@ -24,10 +24,10 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-	//findWhere();
+	findWhere();
 	//reject();
 	//every();
-	find();
+	//find();
 });
 
 function findWhere(){
@@ -37,7 +37,7 @@ function findWhere(){
 		{name:"nho",age:23}
 	];
 	var found=_.findWhere(people,{age:21});
-	console.log(found.age);
+	console.log(found);
 }
 function reject(){
 	var numbers = [1,2,3,4,5,6];
