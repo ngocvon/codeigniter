@@ -2,23 +2,29 @@ function ViewModel() {
     var self = this;
     
     self.selectedColorId = ko.observable();
-
-    self.colors = ko.observableArray([{
-        "Id": "0",
-            "Title": "Red",
-            "Desc": "Some text.."
-    }, {
-        "Id": "1",
-            "Title": "Green",
-            "Desc": "Other text.."
-    }, {
-        "Id": "2",
-            "Title": "Blue",
-            "Desc": "More text.."
-    }]);
+	self.optionsText = ko.observable();
+    self.colors = ko.observableArray([
+		{
+			Id: "w0",
+			Title: "Red",
+			Desc: "Some text.."
+		}, 
+		{
+			Id: "w1",
+			Title: "Green",
+			Desc: "Other text.."
+		}, 
+		{
+			Id: "w2",
+			Title: "Blue",
+			Desc: "More text.."
+		}
+	]);
     
-    self.selectedColor = ko.computed(function () {
-        return self.colors()[self.selectedColorId()];
+    self.selectedColor = ko.computed(function (obj,key) {
+		
+        //return self.colors()[self.selectedColorId()];
+		console.log('obj',obj);
     });
 }
 

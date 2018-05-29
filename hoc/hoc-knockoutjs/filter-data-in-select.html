@@ -22,11 +22,13 @@
 	<select data-bind="options: colors,
                    optionsCaption: 'Choose...',
                    optionsText: 'Title',
-                   value: selectedColorId, optionsValue: 'Id',
-                   attr: { name: 'color' }"></select>
+				   optionsValue: 'Id',
+                   value: selectedColorId,
+                   attr: { name: 'color' }">
+			</select>
 	<hr>
 	<h3>Description</h3>
-	<div data-bind="text: selectedColor.Desc"></div>
+	<div data-bind="text: selectedColor"></div>
 	
   	<script type='text/javascript' src='js/jquery.js'></script>
   	<script type='text/javascript' src='js/knockout-2.2.0.js'></script>

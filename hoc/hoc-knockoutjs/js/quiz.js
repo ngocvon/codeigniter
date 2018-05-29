@@ -21,7 +21,7 @@ function StarDataModel(){
 		}
 	});
 	
-	self.getImageUrl() =function(){
+	/*self.getImageUrl() =function(){
 		var url = null;
 		$.ajax({
 			'asys':false,
@@ -34,7 +34,7 @@ function StarDataModel(){
 			}
 		});
 		return url;
-	};
-	self.imageUrl = ko.observable(self.getImageUrl(starList[0]));
+	};*/
+	//self.imageUrl = ko.observable(self.getImageUrl(starList[0]));
 };
 ko.applyBindings(new StarDataModel());
